@@ -8,9 +8,22 @@ jQuery 1.4 +
 *  用法
 
         node.swipeEvent({
-        start: function(sw) {
-        // 其实大多数情况下不需要它
-        },
+          start: function(sw) {
+            // 其实大多数情况下不需要它
+          },
+
+          move: function(sw) {
+            // sw参数说明见下面 
+          },
+          end: function(sw) {
+            // 重置一些东西
+          }
+        });
+
+
+*  实际用例：（大部分是业务代码是你不需要的）
+
+        node.swipeEvent({
         move: function(sw) {
             var offset = sw.offset;
             direction = sw.direction;
